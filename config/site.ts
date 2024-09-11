@@ -1,6 +1,6 @@
 import type { FooterItem, MainNavItem } from "@/types";
 
-import { productConfig } from "@/config/product";
+// import { productConfig } from "@/config/product";
 import { slugify } from "@/lib/utils";
 
 export type SiteConfig = typeof siteConfig;
@@ -44,25 +44,25 @@ export const siteConfig = {
         },
       ],
     },
-    ...productConfig.categories.map((category) => ({
-      title: category.name,
-      items: [
-        {
-          title: "Hepsi",
-          href: `/categories/${slugify(category.name)}`,
-          description: `All ${category.name}.`,
-          items: [],
-        },
-        ...category.subcategories.map((subcategory) => ({
-          title: subcategory.name,
-          href: `/categories/${slugify(category.name)}/${slugify(
-            subcategory.name
-          )}`,
-          description: subcategory.description,
-          items: [],
-        })),
-      ],
-    })),
+    // ...productConfig.categories.map((category) => ({
+    //   title: category.name,
+    //   items: [
+    //     {
+    //       title: "Hepsi",
+    //       href: `/categories/${slugify(category.name)}`,
+    //       description: `All ${category.name}.`,
+    //       items: [],
+    //     },
+    //     ...category.subcategories.map((subcategory) => ({
+    //       title: subcategory.name,
+    //       href: `/categories/${slugify(category.name)}/${slugify(
+    //         subcategory.name
+    //       )}`,
+    //       description: subcategory.description,
+    //       items: [],
+    //     })),
+    //   ],
+    // })),
   ] satisfies MainNavItem[],
   footerNav: [
     {

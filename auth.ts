@@ -4,8 +4,9 @@ import { PrismaAdapter } from "@auth/prisma-adapter";
 import Credentials from "next-auth/providers/credentials";
 import bcrypt from "bcryptjs";
 import { prisma } from "@/lib/db";
-import { saltAndHashPassword } from "@/app/utils/helper";
+import { saltAndHashPassword } from "@/utils/helper";
 import google from "next-auth/providers/google";
+import { getUserByEmail } from "@/lib/user";
 
 export const {
   handlers: { GET, POST },

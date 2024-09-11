@@ -21,12 +21,6 @@ export default async function IndexPage() {
   return (
     <React.Suspense fallback={<div>Loading...</div>}>
       <Lobby />
-      {/* <Lobby
-      // githubStarsPromise={githubStarsPromise}
-      // productsPromise={productsPromise}
-      // categoriesPromise={categoriesPromise}
-      // storesPromise={storesPromise}
-      /> */}
     </React.Suspense>
   );
 }

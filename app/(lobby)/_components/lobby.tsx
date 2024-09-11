@@ -17,6 +17,7 @@ import CarouselSpacing from "@/components/Carousel-item";
 import { useState } from "react";
 import { ChevronDown, ChevronUp } from "lucide-react";
 import { FAQAccordion } from "@/components/FAQAccordion";
+import Link from "next/link";
 export function Lobby() {
   return (
     <section className="min-h-screen  bg-cover bg-no-repeat bg-bottom">
@@ -89,26 +90,28 @@ export function Lobby() {
                     style={{ color: "#FAFAFA" }}
                   />
                 </div>
-                <button
-                  className=" shadow py-2 whitespace-nowrap rounded-md text-white ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 py-2 h-12 md:h-14 w-40 md:w-48 text-base md:text-lg font-semibold bg-red-600 hover:bg-red-700 flex justify-between items-center px-6"
-                  type="submit"
-                >
-                  Başlayın
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="24"
-                    height="24"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    className="lucide lucide-chevron-right ml-2"
+                <Link href="/signup">
+                  <button
+                    className=" shadow py-2 whitespace-nowrap rounded-md text-white ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 py-2 h-12 md:h-14 w-40 md:w-48 text-base md:text-lg font-semibold bg-red-600 hover:bg-red-700 flex justify-between items-center px-6"
+                    type="submit"
                   >
-                    <path d="m9 18 6-6-6-6"></path>
-                  </svg>
-                </button>
+                    Başlayın
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      className="lucide lucide-chevron-right ml-2"
+                    >
+                      <path d="m9 18 6-6-6-6"></path>
+                    </svg>
+                  </button>
+                </Link>
               </form>
             </div>
           </div>
