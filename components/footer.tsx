@@ -1,8 +1,6 @@
 "use client";
 import Link from "next/link";
 import { siteConfig } from "@/config/site";
-import { cn } from "@/lib/utils";
-import { buttonVariants } from "@/components/ui/button";
 import { Icons } from "@/components/icons";
 import { ModeToggle } from "@/components/layouts/mode-toggle";
 import { Shell } from "@/components/shell";
@@ -47,30 +45,16 @@ export function SiteFooter() {
           <div className="flex-1 text-left text-sm leading-loose">
             Built by{" "}
             <Link
-              href="https://twitter.com/sadmann17"
+              href="/"
               target="_blank"
               rel="noreferrer"
               className="font-semibold transition-colors hover:text-foreground"
             >
               Sport tv
-              <span className="sr-only">Twitter</span>
             </Link>
             .
           </div>
           <div className="flex items-center space-x-1 dark:text-white text-black">
-            <Link
-              href={siteConfig.links.github}
-              target="_blank"
-              rel="noreferrer"
-              className={cn(
-                buttonVariants({
-                  size: "icon",
-                  variant: "ghost",
-                })
-              )}
-            >
-              <span className="sr-only">GitHub</span>
-            </Link>
             <ModeToggle />
           </div>
         </section>
