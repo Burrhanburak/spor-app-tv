@@ -54,7 +54,7 @@ function LoginPageContent() {
             href="/signin/reset-password"
             className="text-sm text-primary underline-offset-4 transition-colors hover:underline"
           >
-            Reset password
+            Şifremi unuttum?
           </Link>
         </CardFooter>
       </Card>

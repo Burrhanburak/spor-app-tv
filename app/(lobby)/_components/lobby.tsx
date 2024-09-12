@@ -55,7 +55,7 @@ export function Lobby() {
                 className="text-lg md:text-xl text-center font-medium"
                 style={{ color: "#FAFAFA" }}
               >
-                49,99 TL ile başlayan fiyatlarla. İstediğiniz zaman iptal edin.
+                149,99 TL ile başlayan fiyatlarla. İstediğiniz zaman iptal edin.
               </p>
               <p
                 className="text-base md:text-lg text-center mt-2 mx-4 font-medium"
@@ -177,8 +177,8 @@ export function Lobby() {
         <Shell>
           <section className="space-y-3 container mx-auto">
             <h3 className="text-xl md:text-2xl font-medium text-center max-w-2xl mx-auto">
-              Ready to watch? Enter your email to create or restart your
-              membership.
+              İzlemeye hazır mısınız? Üye olmak ya da hesabınıza tekrar ulaşmak
+              için tek yapmanız gereken e-posta adresinizi girmek.
             </h3>
 
             <div className="max-w-xl mx-auto">

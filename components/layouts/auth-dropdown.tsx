@@ -30,8 +30,8 @@ export async function AuthDropdown({ className, ...props }: AuthDropdownProps) {
     return (
       <Button size="sm" className={cn(className)} {...props} asChild>
         <Link href="/signin">
-          Sign In
-          <span className="sr-only">Sign In</span>
+          Giriş yap
+          <span className="sr-only">Giriş yap</span>
         </Link>
       </Button>
     );
@@ -98,24 +98,24 @@ function AuthDropdownGroup() {
   return (
     <DropdownMenuGroup>
       <DropdownMenuItem asChild>
-        <Link href="/dashboard">
+        <Link href="/Profilim">
           <DashboardIcon className="mr-2 size-4" aria-hidden="true" />
-          Dashboard
-          <DropdownMenuShortcut>⌘D</DropdownMenuShortcut>
+          Profilim
+          <DropdownMenuShortcut>⌘P</DropdownMenuShortcut>
         </Link>
       </DropdownMenuItem>
       <DropdownMenuItem asChild>
         <Link href="/dashboard/billing">
           <Icons.credit className="mr-2 size-4" aria-hidden="true" />
-          Billing
-          <DropdownMenuShortcut>⌘B</DropdownMenuShortcut>
+          Ödeme Bilgilerim
+          <DropdownMenuShortcut>⌘Ö</DropdownMenuShortcut>
         </Link>
       </DropdownMenuItem>
       <DropdownMenuItem asChild>
         <Link href="/dashboard/settings">
           <GearIcon className="mr-2 size-4" aria-hidden="true" />
-          Settings
-          <DropdownMenuShortcut>⌘S</DropdownMenuShortcut>
+          Ayarlar
+          <DropdownMenuShortcut>⌘A</DropdownMenuShortcut>
         </Link>
       </DropdownMenuItem>
     </DropdownMenuGroup>

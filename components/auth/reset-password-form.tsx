@@ -60,12 +60,12 @@ const ResetPasswordForm = () => {
               name="email"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel>Email</FormLabel>
+                  <FormLabel>E-posta</FormLabel>
                   <FormControl>
                     <Input
                       {...field}
                       disabled={isPending}
-                      placeholder="your.email@example.com"
+                      placeholder="emaii@ornek.com"
                       type="email"
                     />
                   </FormControl>
@@ -81,7 +81,7 @@ const ResetPasswordForm = () => {
             type="submit"
             className="w-full hover:bg-sky-400"
           >
-            Send reset password email
+            E-posta gönder
           </Button>
         </form>
       </Form>

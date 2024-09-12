@@ -65,7 +65,7 @@ const NewPasswordForm = () => {
               name="password"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel>Password</FormLabel>
+                  <FormLabel>Şifre</FormLabel>
                   <FormControl>
                     <PasswordInput
                       {...field}
@@ -83,7 +83,7 @@ const NewPasswordForm = () => {
               name="passwordConfirmation"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel>Confirm your password</FormLabel>
+                  <FormLabel>Şifreyi onaylayınız</FormLabel>
                   <FormControl>
                     <PasswordInput
                       {...field}
@@ -104,7 +104,7 @@ const NewPasswordForm = () => {
             type="submit"
             className="w-full hover:bg-sky-400"
           >
-            Reset password
+            Şifremi değiştir
           </Button>
         </form>
       </Form>

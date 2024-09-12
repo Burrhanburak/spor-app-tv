@@ -81,7 +81,7 @@ export function JoinNewsletterForm() {
           name="email"
           render={({ field }) => (
             <FormItem className="flex flex-col sm:flex-row gap-3 text-center justify-center">
-              <FormLabel className="sr-only">Email</FormLabel>
+              <FormLabel className="sr-only">E-posta adresiniz</FormLabel>
               <FormControl>
                 <Input
                   placeholder="sporttv@gmail.com"

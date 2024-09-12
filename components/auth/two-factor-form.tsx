@@ -65,7 +65,7 @@ const TwoFactorForm = () => {
     <CardWrapper
       headerLabel="Two Factor Authentication"
       backButtonLabel="Back to login"
-      backButtonHref="/auth/login"
+      backButtonHref="/login"
     >
       <Form {...form}>
         <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
@@ -75,7 +75,7 @@ const TwoFactorForm = () => {
               name="code"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel>Two Factor Code</FormLabel>
+                  <FormLabel>İki faktörlü doğrulama kodu</FormLabel>
                   <FormControl>
                     <Input
                       {...field}
@@ -91,7 +91,7 @@ const TwoFactorForm = () => {
           <FormError message={error} />
           <FormSuccess message={success} />
           <Button type="submit" className="w-full" disabled={isPending}>
-            Verify
+            Kodu doğrulayınız
           </Button>
         </form>
       </Form>

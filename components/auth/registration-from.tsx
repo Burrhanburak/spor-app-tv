@@ -76,13 +76,13 @@ export const RegistrationForm = () => {
           name="name"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Name</FormLabel>
+              <FormLabel>Adınız</FormLabel>
               <FormControl>
                 <Input
                   {...field}
                   disabled={isPending}
                   type="text"
-                  placeholder="Your Name"
+                  placeholder="Adınız"
                 />
               </FormControl>
               <FormMessage />
@@ -100,7 +100,7 @@ export const RegistrationForm = () => {
                   {...field}
                   disabled={isPending}
                   type="email"
-                  placeholder="your.email@example.com"
+                  placeholder="email@ornek.com"
                 />
               </FormControl>
               <FormMessage />
@@ -113,7 +113,7 @@ export const RegistrationForm = () => {
           name="password"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Password</FormLabel>
+              <FormLabel>Şifre</FormLabel>
               <FormControl>
                 <PasswordInput placeholder="**********" {...field} />
               </FormControl>
@@ -126,14 +126,9 @@ export const RegistrationForm = () => {
           name="passwordConfirmation"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Confirm your password</FormLabel>
+              <FormLabel>Şifreyi onayla</FormLabel>
               <FormControl>
-                <PasswordInput
-                  {...field}
-                  disabled={isPending}
-                  type="password"
-                  placeholder="******"
-                />
+                <PasswordInput placeholder="**********" {...field} />
               </FormControl>
               <FormMessage />
               <Button
@@ -142,7 +137,7 @@ export const RegistrationForm = () => {
                 asChild
                 className="px-0 text-muted-foreground"
               >
-                <Link href="/auth/reset">Forgot your password?</Link>
+                <Link href="/reset">Şifremi unuttum?</Link>
               </Button>
             </FormItem>
           )}
@@ -158,7 +153,7 @@ export const RegistrationForm = () => {
           {isPending ? (
             <>
               <Icons.spinner className="mr-2 h-4 w-4 animate-spin" />
-              Registering...
+              Kayıt işlemi devam ediyor...
             </>
           ) : (
             "Register"
