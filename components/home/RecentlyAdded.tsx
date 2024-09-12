@@ -2,20 +2,14 @@ import Image from "next/image";
 
 import { prisma } from "@/lib/db";
 import { MovieCard } from "@/components/home/MovieCard";
-// import { getServerSession } from "next-auth";
-// import { authOptions } from "../utils/auth";
 
-async function getData(userId: string) {
+async function getData() {
   const data = await prisma.sport.findMany({
     select: {
       id: true,
       overview: true,
       title: true,
-      // WatchLists: {
-      //   where: {
-      //     userId: userId,
-      //   },
-      // },
+
       imageString: true,
       youtubeString: true,
       age: true,
@@ -32,8 +26,6 @@ async function getData(userId: string) {
 }
 
 export default async function RecentlyAdded() {
-  // const session = await getServerSession(authOptions);
-  // const data = await getData(session?.user?.email as string);
   const data = await getData();
   console.log(data);
 
@@ -63,9 +55,7 @@ export default async function RecentlyAdded() {
                 movieId={movie.id}
                 overview={movie.overview}
                 title={movie.title}
-                // wachtListId={movie.WatchLists[0]?.id}
                 youtubeUrl={movie.youtubeString}
-                // watchList={movie.WatchLists.length > 0 ? true : false}
                 key={movie.id}
                 age={movie.age}
                 time={movie.duration}

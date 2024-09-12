@@ -1,9 +1,5 @@
-import React from "react";
+import React, { Suspense } from "react";
 import Link from "next/link";
-import { Suspense } from "react";
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
 import {
   Card,
   CardContent,
@@ -13,8 +9,10 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { LoginForm } from "@/components/auth/login-form";
+import Social from "@/components/auth/social";
+import ClientWrapper from "@/components/ClientWrapper";
 
-export default function LoginPage() {
+function LoginPageContent() {
   return (
     <div className="flex min-h-screen items-center justify-center p-4">
       <Card className="w-full max-w-md">
@@ -25,7 +23,7 @@ export default function LoginPage() {
           </CardDescription>
         </CardHeader>
         <CardContent className="grid gap-4">
-          {/* <OAuthSignIn /> */}
+          <Social />
           <div className="relative">
             <div className="absolute inset-0 flex items-center">
               <span className="w-full border-t" />
@@ -61,5 +59,13 @@ export default function LoginPage() {
         </CardFooter>
       </Card>
     </div>
+  );
+}
+
+export default function LoginPage() {
+  return (
+    <ClientWrapper>
+      <LoginPageContent />
+    </ClientWrapper>
   );
 }

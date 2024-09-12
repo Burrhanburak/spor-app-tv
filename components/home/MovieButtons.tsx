@@ -4,7 +4,6 @@ import { Button } from "@/components/ui/button";
 import { InfoIcon, PlayCircle } from "lucide-react";
 import { useState } from "react";
 import PlayVideoModal from "@/components/home/PlayVideoModal";
-import Link from "next/link";
 
 interface iAppProps {
   overview: string;

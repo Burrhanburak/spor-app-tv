@@ -1,29 +1,24 @@
-// import type { User } from "@clerk/nextjs/server";
-
 import { siteConfig } from "@/config/site";
-import { CartSheet } from "@/components/checkout/cart-sheet";
 import { AuthDropdown } from "@/components/layouts/auth-dropdown";
+
 import { MainNav } from "@/components/layouts/main-nav";
 import { MobileNav } from "@/components/layouts/mobile-nav";
-import { ProductsCombobox } from "@/components/products-combobox";
 import { Bell } from "lucide-react";
+import { ProductsCombobox } from "@/components/home/products-combobox";
+import { currentUser } from "@/lib/auth";
 
-interface SiteHeaderProps {
-  user: User | null;
-}
-
-export function SiteHeader({ user }: SiteHeaderProps) {
+export async function SiteHeader() {
+  const user = await currentUser();
   return (
-    <header className="sticky top-0 z-50 w-full ">
-      <div className="container relative flex h-16 items-center">
+    <header className="sticky top-0 z-50 w-full border-b bg-[hsl(240deg_18.16%_1.64%/63%)]">
+      <div className="container flex h-16 items-center">
         <MainNav items={siteConfig.mainNav} />
         <MobileNav items={siteConfig.mainNav} />
         <div className="flex flex-1 items-center justify-end space-x-4">
-          <nav className="flex items-center space-x-3">
+          <nav className="flex items-center space-x-2">
             <ProductsCombobox />
-            <Bell className="h-5 w-5 text-gray-300 cursor-pointer" />
-            {/* <CartSheet /> */}
-            <AuthDropdown user={user} />
+            <Bell />
+            <AuthDropdown {...user} />
           </nav>
         </div>
       </div>

@@ -4,7 +4,6 @@ import Image from "next/image";
 import Link from "next/link";
 import Logo from "@/public/logo.png";
 import { usePathname } from "next/navigation";
-import { Bell, Search } from "lucide-react";
 import UserNav from "@/components/home/UserNav";
 import { ProductsCombobox } from "./products-combobox";
 
@@ -65,10 +64,6 @@ export default function Navbar() {
             <UserNav />
           </nav>
         </div>
-
-        {/* <Search className="w-5 h-5 text-gray-300 cursor-pointer" />
-
-        <Bell className="h-5 w-5 text-gray-300 cursor-pointer" /> */}
       </div>
     </div>
   );

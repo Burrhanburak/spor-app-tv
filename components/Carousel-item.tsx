@@ -8,7 +8,6 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel";
-import { type CarouselApi } from "@/components/ui/carousel";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -23,8 +22,6 @@ import sport7 from "@/public/images/7.webp";
 import sport8 from "@/public/images/8.webp";
 
 export default function MovieCarousel() {
-  const [api, setApi] = React.useState<CarouselApi>();
-
   const movies = [
     { id: 1, title: "sport 1", image: sport1 },
     { id: 2, title: "sport 2", image: sport2 },
@@ -43,7 +40,6 @@ export default function MovieCarousel() {
         loop: true,
       }}
       className="w-full max-w-xs sm:max-w-md md:max-w-lg lg:max-w-4xl xl:max-w-6xl 2xl:max-w-7xl mx-auto relative"
-      setApi={setApi}
     >
       <CarouselContent className="-ml-2">
         {movies.map((movie) => (

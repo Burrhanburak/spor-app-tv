@@ -1,16 +1,13 @@
 "use client";
 
-import React from "react";
-import Link from "next/link";
+import React, { useState, useTransition } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
 import { authSchema } from "@/lib/validation/auth";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
-import { useRouter } from "next/navigation";
+import { useRouter, useSearchParams } from "next/navigation";
 import type { z } from "zod";
-import { showErrorToast } from "@/lib/handle-error";
 import {
   Form,
   FormControl,
@@ -19,14 +16,31 @@ import {
   FormLabel,
   FormMessage,
 } from "@/components/ui/form";
-import { Icons } from "@/components/icons";
 import { PasswordInput } from "./password-input";
-import { loginAction } from "@/lib/actions/login";
+import { login } from "@/lib/actions/login";
+import Spinner from "../spinner";
+import { LoginSchema } from "@/schemas";
+import { useIsClient } from "@/hooks/use-is-client";
+import FormError from "./form-error";
+import FormSuccess from "./form-success";
+
 type Inputs = z.infer<typeof authSchema>;
 
 export const LoginForm = () => {
+  const searchParams = useSearchParams();
   const router = useRouter();
-  const [loading, setLoading] = React.useState(false);
+  const callbackUrl = searchParams.get("callbackUrl");
+  const urlError =
+    searchParams.get("error") === "OAuthAccountNotLinked"
+      ? "Email already in use with a different provider!"
+      : "";
+
+  const [error, setError] = useState<string>("");
+  const [success, setSuccess] = useState<string>("");
+
+  const [isPending, startTransition] = useTransition();
+
+  const isClient = useIsClient();
 
   const form = useForm<Inputs>({
     resolver: zodResolver(authSchema),
@@ -35,20 +49,30 @@ export const LoginForm = () => {
       password: "",
     },
   });
-  async function onSubmit(data: Inputs) {
-    setLoading(true);
-    try {
-      await loginAction(data);
+  const onSubmit = (values: z.infer<typeof LoginSchema>) => {
+    setError("");
+    setSuccess("");
 
-      // Handle successful login (e.g., redirect)
-      router.push("/home");
-    } catch (error) {
-      showErrorToast(error);
-    } finally {
-      setLoading(false);
-    }
-  }
+    startTransition(() => {
+      login(values)
+        .then((data) => {
+          if (data?.twoFactor) {
+            router.push(`/auth/two-factor?email=${values.email}`);
+            return;
+          }
+          if (data?.error) {
+            setError(data.error);
+          }
+          if (data?.success) {
+            setSuccess(data.success);
+            router.push(callbackUrl || "/home");
+          }
+        })
+        .catch(() => setError("Something went wrong"));
+    });
+  };
 
+  if (!isClient) return <Spinner />;
   return (
     <Form {...form}>
       <form className="grid gap-4" onSubmit={form.handleSubmit(onSubmit)}>
@@ -83,17 +107,14 @@ export const LoginForm = () => {
             </FormItem>
           )}
         />
+        {(error || urlError) && <FormError message={error || urlError} />}
+        {success && <FormSuccess message={success} />}
+
         <Button
           className="shadow py-2 whitespace-nowrap rounded-md text-white ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 h-12 md:h-14 w-full text-base md:text-lg font-semibold bg-red-600 hover:bg-red-700 flex justify-center items-center px-6"
           type="submit"
-          disabled={loading}
+          disabled={isPending}
         >
-          {loading && (
-            <Icons.spinner
-              className="mr-2 size-4 animate-spin"
-              aria-hidden="true"
-            />
-          )}
           Giriş yap
         </Button>
       </form>

@@ -1,18 +1,14 @@
 "use client";
 
-import { Button, buttonVariants } from "@/components/ui/button";
-import { Heart, PlayCircle } from "lucide-react";
+import { PlayCircle } from "lucide-react";
 import PlayVideoModal from "@/components/home/PlayVideoModal";
 import { useState } from "react";
-// import { addTowatchlist, deleteFromWatchlist } from "../action";
 import { usePathname } from "next/navigation";
 
 interface iAppProps {
   title: string;
   overview: string;
   movieId: number;
-  // watchList: boolean;
-  // wachtListId: string;
   youtubeUrl: string;
   year: number;
   age: number;
@@ -23,8 +19,6 @@ export function MovieCard({
   movieId,
   overview,
   title,
-  // wachtListId,
-  // watchList,
   youtubeUrl,
   age,
   time,
@@ -38,25 +32,7 @@ export function MovieCard({
         <PlayCircle className="h-20 w-20" />
       </button>
 
-      <div className="right-5 top-5 absolute z-10">
-        {/* {watchList ? (
-          <form action={deleteFromWatchlist}>
-            <input type="hidden" name="watchlistId" value={wachtListId} />
-            <input type="hidden" name="pathname" value={pathName} />
-            <Button variant="outline" size="icon">
-              <Heart className="w-4 h-4 text-red-500" />
-            </Button>
-          </form>
-        ) : (
-          <form action={addTowatchlist}>
-            <input type="hidden" name="movieId" value={movieId} />
-            <input type="hidden" name="pathname" value={pathName} />
-            <Button variant="outline" size="icon">
-              <Heart className="w-4 h-4" />
-            </Button>
-          </form>
-        )} */}
-      </div>
+      <div className="right-5 top-5 absolute z-10"></div>
 
       <div className="p-5 absolute bottom-0 left-0">
         <h1 className="font-bold text-lg line-clamp-1">{title}</h1>
@@ -75,6 +51,7 @@ export function MovieCard({
       <PlayVideoModal
         youtubeUrl={youtubeUrl}
         key={movieId}
+        href={pathName}
         title={title}
         overview={overview}
         state={open}

@@ -1,5 +1,4 @@
 import type { Metadata, Viewport } from "next";
-// import { env } from "@/env.mjs";
 
 import "@/styles/globals.css";
 
@@ -13,8 +12,6 @@ import { Toaster } from "@/components/ui/toaster";
 import { Analytics } from "@/components/analytics";
 import { ThemeProvider } from "@/components/providers";
 import { TailwindIndicator } from "@/components/tailwind-indicator";
-import { auth } from "@/auth";
-import { SessionProvider } from "next-auth/react";
 
 export const metadata: Metadata = {
   metadataBase: new URL(
@@ -74,9 +71,6 @@ interface RootLayoutProps {
 }
 
 export default async function RootLayout({ children }: RootLayoutProps) {
-  // // Kullanıcı bilgisini alıyoruz (isteğe bağlı)
-  // const user = await getCurrentUser();
-
   return (
     <html lang="en" suppressHydrationWarning>
       <head />

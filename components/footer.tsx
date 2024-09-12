@@ -1,61 +1,84 @@
+"use client";
 import Link from "next/link";
-import { Separator } from "@/components/ui/separator";
-import Image from "next/image";
-import logo from "@/public/images/logo.png"; // Update this path
+import { siteConfig } from "@/config/site";
+import { cn } from "@/lib/utils";
+import { buttonVariants } from "@/components/ui/button";
+import { Icons } from "@/components/icons";
+import { ModeToggle } from "@/components/layouts/mode-toggle";
+import { Shell } from "@/components/shell";
 
-export default function Footer() {
+export function SiteFooter() {
   return (
-    <footer className="bg-black text-white py-4 ">
-      <div className="container mx-auto px-8 ">
-        <div className="flex flex-col md:flex-row justify-between items-center">
-          <div className="flex items-center mb-4 md:mb-0 order-1 md:order-none">
-            <Image
-              className="w-8 h-8 bg-[#7ce7ac] rounded-lg mr-2"
-              src={logo}
-              alt="logo"
-              width={32}
-              height={32}
-            />
-            <span className="text-xl font-bold">Fii</span>
+    <footer className="w-full bg-white  dark:bg-[hsl(0deg_0%_0%)] text-black dark:text-white">
+      <Shell>
+        <section className="flex flex-col gap-10 lg:flex-row lg:gap-20">
+          <section>
+            <Link href="/" className="flex w-fit items-center space-x-2">
+              <Icons.logo className="size-6" aria-hidden="true" />
+              <span className="font-bold">{siteConfig.name}</span>
+              <span className="sr-only">Home</span>
+            </Link>
+          </section>
+          <section className="grid flex-1 grid-cols-1 gap-10 xxs:grid-cols-2 sm:grid-cols-4">
+            {siteConfig.footerNav.map((item) => (
+              <div key={item.title} className="space-y-3">
+                <h4 className="text-base font-medium">{item.title}</h4>
+                <ul className="space-y-2.5">
+                  {item.items.map((link) => (
+                    <li key={link.title}>
+                      <Link
+                        href={link.href}
+                        target={link?.external ? "_blank" : undefined}
+                        rel={link?.external ? "noreferrer" : undefined}
+                        className="text-sm text-muted-foreground transition-colors hover:text-foreground"
+                      >
+                        {link.title}
+                        <span className="sr-only">{link.title}</span>
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+          </section>
+          <section className="space-y-3"></section>
+        </section>
+        <section className="flex items-center space-x-4">
+          <div className="flex-1 text-left text-sm leading-loose">
+            Built by{" "}
+            <Link
+              href="https://twitter.com/sadmann17"
+              target="_blank"
+              rel="noreferrer"
+              className="font-semibold transition-colors hover:text-foreground"
+            >
+              Sport tv
+              <span className="sr-only">Twitter</span>
+            </Link>
+            .
           </div>
-          <nav className="flex flex-wrap justify-center md:justify-end gap-x-4 gap-y-2 text-xs md:text-sm mb-4 md:mb-0 order-2 md:order-none">
+          <div className="flex items-center space-x-1 dark:text-white text-black">
             <Link
-              href="/mesafeli-satis-sozlesmesi"
-              className="hover:text-[#7ce7ac] transition-colors"
+              href={siteConfig.links.github}
+              target="_blank"
+              rel="noreferrer"
+              className={cn(
+                buttonVariants({
+                  size: "icon",
+                  variant: "ghost",
+                })
+              )}
             >
-              Mesafeli Satış Sözleşmesi
+              <Icons.gitHub
+                className="size-4 dark:text-white text-black"
+                aria-hidden="true"
+              />
+              <span className="sr-only">GitHub</span>
             </Link>
-            <Link
-              href="/on-bilgilendirme-formu"
-              className="hover:text-[#7ce7ac] transition-colors"
-            >
-              Ön Bilgilendirme Formu
-            </Link>
-            <Link
-              href="/kullanim-sartlari"
-              className="hover:text-[#7ce7ac] transition-colors"
-            >
-              Kullanım Şartları
-            </Link>
-            <Link
-              href="/gizlilik"
-              className="hover:text-[#7ce7ac] transition-colors"
-            >
-              Gizlilik
-            </Link>
-            <Link
-              href="/cerez-tercihleri"
-              className="hover:text-[#7ce7ac] transition-colors"
-            >
-              Çerez Tercihleri
-            </Link>
-          </nav>
-        </div>
-        <Separator className="bg-gray-800 my-4" />
-        <div className="text-center text-xs text-gray-400">
-          © 2024 Fii, Tüm hakları saklıdır
-        </div>
-      </div>
+            <ModeToggle />
+          </div>
+        </section>
+      </Shell>
     </footer>
   );
 }

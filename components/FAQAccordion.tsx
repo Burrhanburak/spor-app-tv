@@ -42,12 +42,12 @@ export const FAQAccordion = () => {
         <AccordionItem
           key={index}
           value={`item-${index}`}
-          className="border border-gray-700 rounded"
+          className="border bg-[#2d2d2d] rounded"
         >
-          <AccordionTrigger className="flex justify-between items-center w-full p-4 text-left text-white focus:outline-none">
+          <AccordionTrigger className="flex justify-between items-center w-full p-4 text-left text-white bg-[#2d2d2d] focus:outline-none">
             <span className="text-lg font-semibold">{faq.question}</span>
           </AccordionTrigger>
-          <AccordionContent className="p-4 bg-gray-800 text-white">
+          <AccordionContent className="p-4 bg-[#2d2d2d text-white">
             <p>{faq.answer}</p>
           </AccordionContent>
         </AccordionItem>

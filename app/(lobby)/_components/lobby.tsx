@@ -1,23 +1,12 @@
 import Image from "next/image";
+import { Tv, MessageCircle, Repeat, BarChart2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import {
-  ChevronRight,
-  ShieldCheckIcon,
-  Trophy,
-  Medal,
-  Tv,
-  MessageCircle,
-  Repeat,
-  BarChart2,
-} from "lucide-react";
-import logo from "@/public/images/sport-logo.png";
-import bgImage from "@/public/images/spor-one.webp";
+import bgImage from "@/public/images/denem.webp";
 import CarouselSpacing from "@/components/Carousel-item";
-import { useState } from "react";
-import { ChevronDown, ChevronUp } from "lucide-react";
+import { JoinNewsletterForm } from "@/components/join-newsletter-form";
 import { FAQAccordion } from "@/components/FAQAccordion";
 import Link from "next/link";
+import Shell from "@/components/shell";
 export function Lobby() {
   return (
     <section className="min-h-screen  bg-cover bg-no-repeat bg-bottom">
@@ -41,20 +30,15 @@ export function Lobby() {
 
           <div className="absolute inset-0 mx-4 my-2 md:mx-40 flex flex-col justify-between">
             <header className="h-20 md:h-24 w-full flex justify-between items-center">
-              <Image
-                className=""
-                src={logo}
-                alt="logo"
-                width={45}
-                height={45}
-                priority
-              />
-              <a
+              <span className="h-20 w-20 flex items-center">
+                <span className="text-4xl font-bold text-red-600">Fii</span>
+              </span>
+              <Link
                 className="inline-flex items-center justify-center whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50  h-9 rounded-md px-3 bg-red-600 hover:bg-red-700"
                 href="/login"
               >
                 Oturum Aç
-              </a>
+              </Link>
             </header>
 
             {/* Centering the content */}
@@ -69,14 +53,14 @@ export function Lobby() {
                 className="text-lg md:text-xl text-center font-medium"
                 style={{ color: "#FAFAFA" }}
               >
-                Watch anywhere. Cancel anytime.
+                49,99 TL ile başlayan fiyatlarla. İstediğiniz zaman iptal edin.
               </p>
               <p
                 className="text-base md:text-lg text-center mt-2 mx-4 font-medium"
                 style={{ color: "#FAFAFA" }}
               >
-                Ready to watch? Enter your email to create or restart your
-                membership.
+                İzlemeye hazır mısınız? Üye olmak ya da hesabınıza tekrar
+                ulaşmak için tek yapmanız gereken e-posta adresinizi girmek.
               </p>
 
               <form className="w-full flex flex-col md:flex-row justify-center items-center md:items-start mt-4 gap-x-2 gap-y-4">
@@ -91,8 +75,8 @@ export function Lobby() {
                   />
                 </div>
                 <Link href="/signup">
-                  <button
-                    className=" shadow py-2 whitespace-nowrap rounded-md text-white ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 py-2 h-12 md:h-14 w-40 md:w-48 text-base md:text-lg font-semibold bg-red-600 hover:bg-red-700 flex justify-between items-center px-6"
+                  <Button
+                    className="shadow whitespace-nowrap rounded-md text-white ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 h-12 md:h-14 w-40 md:w-48 text-base md:text-lg font-semibold bg-red-600 hover:bg-red-700 flex justify-between items-center px-6 py-2"
                     type="submit"
                   >
                     Başlayın
@@ -110,63 +94,64 @@ export function Lobby() {
                     >
                       <path d="m9 18 6-6-6-6"></path>
                     </svg>
-                  </button>
+                  </Button>
                 </Link>
               </form>
             </div>
           </div>
         </div>
       </div>
-      <section className="bg-black lg:py-40 pb-20">
-        <div className="container mx-auto">
+
+      <section className="bg-black lg:py-40 pb-20 border-none">
+        <div className="container mx-auto ">
           <CarouselSpacing />
         </div>
       </section>
 
-      <section className="bg-black md:py-32 lg:py-40">
-        <div className="container mx-auto">
-          <div className="flex flex-col gap-8">
-            <h2 className="text-2xl md:text-4xl text-center text-white font-bold mb-8">
+      <section className="bg-black ">
+        <div className="container mx-auto px-4">
+          <div className="flex flex-col gap-8 max-w-6xl mx-auto">
+            <h2 className="text-2xl md:text-3xl lg:text-4xl text-center text-white font-bold mb-8">
               Futbol Tutkunları İçin Özellikler
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
               <div className="bg-black p-6 w-full h-full border border-white rounded-lg flex flex-col items-center shadow-lg">
-                <Tv className="w-16 h-16 mb-4 text-red-600" />
-                <h3 className="text-xl font-bold text-white mb-2">
+                <Tv className="w-12 h-12 md:w-16 md:h-16 mb-4 text-red-600" />
+                <h3 className="text-lg md:text-xl font-bold text-white mb-2">
                   Canlı Maç Yayınları
                 </h3>
-                <p className="text-white text-center">
+                <p className="text-white text-center text-sm md:text-base">
                   Tüm büyük liglerin maçlarını HD kalitesinde canlı izleyin.
                 </p>
               </div>
 
               <div className="bg-black p-6 w-full h-full border border-white rounded-lg flex flex-col items-center shadow-lg">
-                <Repeat className="w-16 h-16 mb-4 text-red-600" />
-                <h3 className="text-xl font-bold text-white mb-2">
+                <Repeat className="w-12 h-12 md:w-16 md:h-16 mb-4 text-red-600" />
+                <h3 className="text-lg md:text-xl font-bold text-white mb-2">
                   Maç Tekrarları
                 </h3>
-                <p className="text-white text-center">
+                <p className="text-white text-center text-sm md:text-base">
                   Kaçırdığınız maçları ve önemli anları tekrar izleyin.
                 </p>
               </div>
 
               <div className="bg-black p-6 w-full h-full border border-white rounded-lg flex flex-col items-center shadow-lg">
-                <BarChart2 className="w-16 h-16 mb-4 text-red-600" />
-                <h3 className="text-xl font-bold text-white mb-2">
+                <BarChart2 className="w-12 h-12 md:w-16 md:h-16 mb-4 text-red-600" />
+                <h3 className="text-lg md:text-xl font-bold text-white mb-2">
                   Detaylı İstatistikler
                 </h3>
-                <p className="text-white text-center">
+                <p className="text-white text-center text-sm md:text-base">
                   Oyuncu ve takım performanslarını detaylı istatistiklerle
                   analiz edin.
                 </p>
               </div>
 
               <div className="bg-black p-6 w-full h-full border border-white rounded-lg flex flex-col items-center shadow-lg">
-                <MessageCircle className="w-16 h-16 mb-4 text-red-600" />
-                <h3 className="text-xl font-bold text-white mb-2">
+                <MessageCircle className="w-12 h-12 md:w-16 md:h-16 mb-4 text-red-600" />
+                <h3 className="text-lg md:text-xl font-bold text-white mb-2">
                   Taraftar Sohbetleri
                 </h3>
-                <p className="text-white text-center">
+                <p className="text-white text-center text-sm md:text-base">
                   Maç sırasında diğer taraftarlarla canlı sohbet edin ve
                   tartışın.
                 </p>
@@ -178,12 +163,28 @@ export function Lobby() {
 
       <section className="bg-black py-16">
         <div className="container mx-auto">
-          <h2 className="text-2xl md:text-4xl text-center text-white font-bold mb-8">
+          <h2 className="text-2xl md:text-3xl text-center text-white font-bold mb-8">
             Sıkça Sorulan Sorular
           </h2>
-          <FAQAccordion />
+          <div className="max-w-3xl mx-auto">
+            <FAQAccordion />
+          </div>
         </div>
       </section>
+      <div className="w-full bg-[hsl(0deg_0%_0%)] ">
+        <Shell>
+          <section className="space-y-3 container mx-auto">
+            <h3 className="text-xl md:text-2xl font-medium text-center max-w-2xl mx-auto">
+              Ready to watch? Enter your email to create or restart your
+              membership.
+            </h3>
+
+            <div className="max-w-xl mx-auto">
+              <JoinNewsletterForm />
+            </div>
+          </section>
+        </Shell>
+      </div>
     </section>
   );
 }

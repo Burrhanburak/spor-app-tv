@@ -1,19 +1,12 @@
-import { prisma } from "./db";
+import { prisma } from "@/lib/db";
 
 export const getUserByEmail = async (email: string) => {
   try {
-    const user = await prisma.user.findUnique({
-      where: {
-        email: email,
-      },
-      select: {
-        name: true,
-        emailVerified: true,
-      },
-    });
-
+    const user = await prisma.user.findUnique({ where: { email } });
+    console.log("User found:", user);
     return user;
-  } catch {
+  } catch (error) {
+    console.error("Error in getUserByEmail:", error);
     return null;
   }
 };

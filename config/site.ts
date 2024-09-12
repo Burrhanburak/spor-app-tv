@@ -14,7 +14,7 @@ const links = {
 };
 
 export const siteConfig = {
-  name: "sport tv",
+  name: "Fİİ",
   description:
     "An open source e-commerce skateshop build with everything new in Next.js.",
   url: "https://skateshop.sadmn.com",
@@ -26,147 +26,158 @@ export const siteConfig = {
       items: [
         {
           title: "Canlı Tv",
-          href: "/products",
-          description: "All the products we have to offer.",
+          href: "/canli-tv",
+          description: "Canlı spor yayınlarını izleyin.",
           items: [],
         },
         {
-          title: "Mac özeti",
-          href: "/build-a-board",
-          description: "Build your own custom skateboard.",
-          items: [],
-        },
-        {
-          title: "Haberler",
-          href: "/blog",
-          description: "Read our latest blog posts.",
+          title: "Maç Özeti",
+          href: "/mac-ozeti",
+          description: "Önemli maçların özetlerini izleyin.",
           items: [],
         },
       ],
     },
-    // ...productConfig.categories.map((category) => ({
-    //   title: category.name,
-    //   items: [
-    //     {
-    //       title: "Hepsi",
-    //       href: `/categories/${slugify(category.name)}`,
-    //       description: `All ${category.name}.`,
-    //       items: [],
-    //     },
-    //     ...category.subcategories.map((subcategory) => ({
-    //       title: subcategory.name,
-    //       href: `/categories/${slugify(category.name)}/${slugify(
-    //         subcategory.name
-    //       )}`,
-    //       description: subcategory.description,
-    //       items: [],
-    //     })),
-    //   ],
-    // })),
+    {
+      title: "Haberler",
+      href: "/haberler",
+      description: "En son spor haberlerini okuyun.",
+      items: [
+        {
+          title: "Futbol",
+          href: "/futbol",
+          description: "Futbol hakkında bilgi edinin.",
+          items: [],
+        },
+      ],
+    },
+
+    {
+      title: "Fikstür",
+      href: "/fikstur",
+      description: "Yaklaşan maçların programını inceleyin.",
+      items: [
+        {
+          title: "Puan Durumu",
+          href: "/puan-durumu",
+          description: "Güncel lig puan durumlarını görüntüleyin.",
+          items: [],
+        },
+      ],
+    },
+    {
+      title: "Ligler",
+      href: "/ligler",
+      description: "Tüm ligleri keşfedin.",
+      items: [
+        {
+          title: "Takımlar",
+          href: "/takimlar",
+          description: "Favori takımlarınız hakkında bilgi edinin.",
+          items: [],
+        },
+        {
+          title: "Transferler",
+          href: "/transferler",
+          description: "En son transfer haberlerini takip edin.",
+          items: [],
+        },
+      ],
+    },
   ] satisfies MainNavItem[],
   footerNav: [
     {
-      title: "Credits",
+      title: "SSS",
       items: [
         {
-          title: "OneStopShop",
-          href: "https://onestopshop.jackblatch.com",
-          external: true,
+          title: "Yardım Merkezi",
+          href: "/help-center",
+          external: false,
         },
         {
-          title: "Acme Corp",
-          href: "https://acme-corp.jumr.dev",
-          external: true,
+          title: "Hesap",
+          href: "/account",
+          external: false,
         },
         {
-          title: "craft.mxkaske.dev",
-          href: "https://craft.mxkaske.dev",
-          external: true,
+          title: "Medya Merkezi",
+          href: "/media-center",
+          external: false,
         },
         {
-          title: "Taxonomy",
-          href: "https://tx.shadcn.com/",
-          external: true,
+          title: "Yatırımcı İlişkileri",
+          href: "/investor-relations",
+          external: false,
         },
         {
-          title: "shadcn/ui",
-          href: "https://ui.shadcn.com",
-          external: true,
+          title: "İş İmkanları",
+          href: "/careers",
+          external: false,
         },
       ],
     },
     {
-      title: "Help",
+      title: "Yardım",
       items: [
         {
-          title: "About",
-          href: "/about",
+          title: "Hediye Kartı Kullan",
+          href: "/gift-card",
           external: false,
         },
         {
-          title: "Contact",
-          href: "/contact",
+          title: "İzleme Yolları",
+          href: "/ways-to-watch",
           external: false,
         },
         {
-          title: "Terms",
-          href: "/terms",
+          title: "Kullanım Koşulları",
+          href: "/terms-of-use",
           external: false,
         },
         {
-          title: "Privacy",
+          title: "Gizlilik",
           href: "/privacy",
           external: false,
         },
       ],
     },
     {
-      title: "Social",
+      title: "Yasal",
       items: [
         {
-          title: "X",
-          href: links.x,
-          external: true,
+          title: "Çerez Tercihleri",
+          href: "/cookie-preferences",
+          external: false,
         },
         {
-          title: "GitHub",
-          href: links.githubAccount,
-          external: true,
+          title: "Kurumsal Bilgiler",
+          href: "/corporate-information",
+          external: false,
         },
         {
-          title: "Discord",
-          href: links.discord,
-          external: true,
+          title: "Bize Ulaşın",
+          href: "/contact-us",
+          external: false,
         },
         {
-          title: "cal.com",
-          href: links.calDotCom,
-          external: true,
+          title: "Hız Testi",
+          href: "/speed-test",
+          external: false,
         },
       ],
     },
     {
-      title: "Lofi",
+      title: "Diğer",
       items: [
         {
-          title: "beats to study to",
-          href: "https://www.youtube.com/watch?v=jfKfPfyJRdk",
-          external: true,
+          title: "Yasal Hükümler",
+          href: "/legal-notices",
+          external: false,
         },
         {
-          title: "beats to chill to",
-          href: "https://www.youtube.com/watch?v=rUxyKA_-grg",
-          external: true,
-        },
-        {
-          title: "a fresh start",
-          href: "https://www.youtube.com/watch?v=rwionZbOryo",
-          external: true,
-        },
-        {
-          title: "coffee to go",
-          href: "https://www.youtube.com/watch?v=2gliGzb2_1I",
-          external: true,
+          title: "Sadece Netflix'te",
+          href: "/only-on-netflix",
+          external: false,
         },
       ],
     },

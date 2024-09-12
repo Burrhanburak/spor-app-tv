@@ -1,4 +1,3 @@
-import { Button } from "@/components/ui/button";
 import { prisma } from "@/lib/db";
 import MovieButtons from "@/components/home/MovieButtons";
 
