@@ -49,7 +49,7 @@ export default function UserNav() {
           </div>
         </DropdownMenuLabel>
         <DropdownMenuSeparator />
-        <DropdownMenuItem onClick={() => signOut()}>Sign out</DropdownMenuItem>
+        <DropdownMenuItem onClick={() => signOut()}>Çıkış yap</DropdownMenuItem>
       </DropdownMenuContent>
     </DropdownMenu>
   );

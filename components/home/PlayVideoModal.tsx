@@ -44,7 +44,7 @@ export default function PlayVideoModal({
             <p className="border py-o.5 px-1 border-gray-200 rounded">{age}+</p>
             <p>{duration}h</p>
             <Link href={href} className="flex items-center">
-              <Info className="mr-2 h-6 w-6" /> Learn More
+              <Info className="mr-2 h-6 w-6" /> Daha fazlası
             </Link>
           </div>
         </DialogHeader>

@@ -88,7 +88,7 @@ export function ProductsCombobox() {
         }}
       >
         <CommandInput
-          placeholder="Search products..."
+          placeholder="Maç ara..."
           value={query}
           onValueChange={setQuery}
         />

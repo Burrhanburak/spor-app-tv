@@ -31,7 +31,7 @@ export default async function HomePage() {
     <div className="p-5 lg:p-0">
       <MovieVideo data={movieData} />
       <div className="relative">
-        <h1 className="text-3xl font-bold z-20 ">Recently Added</h1>
+        <h1 className="text-3xl font-bold z-20 ">En son maçlar</h1>
       </div>
       <RecentlyAdded />
     </div>
