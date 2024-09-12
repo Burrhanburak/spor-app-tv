@@ -48,8 +48,8 @@ const ResetPasswordForm = () => {
 
   return (
     <CardWrapper
-      headerLabel="Forgot your password?"
-      backButtonLabel="Back to login"
+      headerLabel="Şifremi unuttum?"
+      backButtonLabel="Giriş sayfasına dön"
       backButtonHref="/login"
     >
       <Form {...form}>
