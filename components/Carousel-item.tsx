@@ -17,7 +17,7 @@ import sport2 from "@/public/images/3.webp";
 import sport3 from "@/public/images/4.webp";
 import sport4 from "@/public/images/5.webp";
 import sport5 from "@/public/images/6.webp";
-import sport6 from "@/public/images/518.png";
+import sport6 from "@/public/images/spor-two.webp";
 import sport7 from "@/public/images/7.webp";
 import sport8 from "@/public/images/8.webp";
 
@@ -61,7 +61,7 @@ export default function MovieCarousel() {
                   </h3>
                 </div>
                 <Link
-                  href="/signin"
+                  href="/login"
                   className="absolute inset-0"
                   aria-label={`Go to ${movie.title}`}
                 />
