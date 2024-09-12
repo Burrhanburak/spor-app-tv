@@ -31,7 +31,9 @@ export function Lobby() {
           <div className="absolute inset-0 mx-4 my-2 md:mx-40 flex flex-col justify-between">
             <header className="h-20 md:h-24 w-full flex justify-between items-center">
               <span className="h-20 w-20 flex items-center">
-                <span className="text-4xl font-bold text-red-600">Fii</span>
+                <Link href="/">
+                  <span className="text-4xl font-bold text-red-600">Fii</span>
+                </Link>
               </span>
               <Link
                 className="inline-flex items-center justify-center whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50  h-9 rounded-md px-3 bg-red-600 hover:bg-red-700"
