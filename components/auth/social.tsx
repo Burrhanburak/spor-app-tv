@@ -26,14 +26,14 @@ const Social = () => {
       >
         <GrGoogle />
       </Button>
-      <Button
+      {/* <Button
         size="lg"
         className="w-full text-xl bg-background"
         variant="outline"
         onClick={() => onClick("github")}
       >
         <FaGithub />
-      </Button>
+      </Button> */}
     </div>
   );
 };
