@@ -51,7 +51,7 @@ function LoginPageContent() {
           </div>
           <Link
             aria-label="Reset password"
-            href="/signin/reset-password"
+            href="/reset"
             className="text-sm text-primary underline-offset-4 transition-colors hover:underline"
           >
             Şifremi unuttum?
