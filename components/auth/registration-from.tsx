@@ -137,7 +137,7 @@ export const RegistrationForm = () => {
                 asChild
                 className="px-0 text-muted-foreground"
               >
-                <Link href="/reset">Şifremi unuttum?</Link>
+                <Link href="/reset-password">Şifremi unuttum?</Link>
               </Button>
             </FormItem>
           )}

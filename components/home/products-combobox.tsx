@@ -5,7 +5,7 @@ import { useRouter } from "next/navigation";
 import { MagnifyingGlassIcon } from "@radix-ui/react-icons";
 
 import { getSportsFilter } from "@/lib/actions/sports";
-import { cn, isMacOs } from "@/lib/utils";
+import { cn } from "@/lib/utils";
 import { useDebounce } from "@/hooks/use-debounce";
 import { Button } from "@/components/ui/button";
 import {
@@ -118,7 +118,7 @@ export function ProductsCombobox() {
                       className="h-9"
                       value={item.name}
                       onSelect={() =>
-                        onSelect(() => router.push(`/product/${item.id}`))
+                        onSelect(() => router.push(`/sport/${item.id}`))
                       }
                     >
                       <Icons.product
