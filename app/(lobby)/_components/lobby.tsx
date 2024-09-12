@@ -65,14 +65,14 @@ export function Lobby() {
 
               <form className="w-full flex flex-col md:flex-row justify-center items-center md:items-start mt-4 gap-x-2 gap-y-4">
                 <div className="space-y-2">
-                  <input
+                  {/* <input
                     className="shadow-sm transition-colors flex rounded-md border border-input px-3 py-2 ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 w-72 md:w-80 h-12 md:h-14 bg-neutral-900/70 text-[14px] md:text-[16px]"
                     placeholder="E-posta Adresiniz"
                     autoComplete="off"
                     type="email"
                     name="email"
                     style={{ color: "#FAFAFA" }}
-                  />
+                  /> */}
                 </div>
                 <Link href="/signup">
                   <Button
