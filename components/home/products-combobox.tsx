@@ -18,7 +18,6 @@ import {
 } from "@/components/ui/command";
 import { Skeleton } from "@/components/ui/skeleton";
 import { Icons } from "@/components/icons";
-import { Kbd } from "@/components/kbd";
 
 type ProductGroup = NonNullable<
   Awaited<ReturnType<typeof getSportsFilter>>["data"]
@@ -78,12 +77,6 @@ export function ProductsCombobox() {
       >
         <MagnifyingGlassIcon className="size-4" aria-hidden="true" />
         <span className="flex-grow text-left">Maç arayınız...</span>
-        {/* <Kbd
-          title={isMacOs() ? "Command" : "Control"}
-          className="pointer-events-none hidden sm:inline-flex"
-        >
-          {isMacOs() ? "⌘" : "Ctrl"} K
-        </Kbd> */}
       </Button>
       <CommandDialog
         open={open}
