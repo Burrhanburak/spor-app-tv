@@ -94,7 +94,7 @@ export const RegistrationForm = () => {
           name="email"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Email</FormLabel>
+              <FormLabel>E-posta adresiniz</FormLabel>
               <FormControl>
                 <Input
                   {...field}
@@ -156,7 +156,7 @@ export const RegistrationForm = () => {
               Kayıt işlemi devam ediyor...
             </>
           ) : (
-            "Register"
+            "Kayıt ol"
           )}
         </Button>
       </form>
