@@ -18,7 +18,7 @@ const LogoutButton = ({ children }: { children: React.ReactNode }) => {
       <Button onClick={handleLogout} className="w-full justify-start">
         <ExitIcon className="mr-2 size-4" aria-hidden="true" />
         {children}
-        <DropdownMenuShortcut>⇧⌘Q</DropdownMenuShortcut>
+        <DropdownMenuShortcut>⌘Ç</DropdownMenuShortcut>
       </Button>
     </DropdownMenuItem>
   );

@@ -88,7 +88,7 @@ export async function AuthDropdown({ className, ...props }: AuthDropdownProps) {
           <AuthDropdownGroup />
         </React.Suspense>
         <DropdownMenuSeparator />
-        <LogoutButton>Logout</LogoutButton>
+        <LogoutButton>Çıkış yap</LogoutButton>
       </DropdownMenuContent>
     </DropdownMenu>
   );
