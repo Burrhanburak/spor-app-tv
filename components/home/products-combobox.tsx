@@ -77,13 +77,13 @@ export function ProductsCombobox() {
         onClick={() => setOpen(true)}
       >
         <MagnifyingGlassIcon className="size-4" aria-hidden="true" />
-        <span className="flex-grow text-left">Search products...</span>
-        <Kbd
+        <span className="flex-grow text-left">Maç arayınız...</span>
+        {/* <Kbd
           title={isMacOs() ? "Command" : "Control"}
           className="pointer-events-none hidden sm:inline-flex"
         >
           {isMacOs() ? "⌘" : "Ctrl"} K
-        </Kbd>
+        </Kbd> */}
       </Button>
       <CommandDialog
         open={open}
@@ -103,7 +103,7 @@ export function ProductsCombobox() {
           <CommandEmpty
             className={cn(loading ? "hidden" : "py-6 text-center text-sm")}
           >
-            No products found.
+            Herhangi bir maç bulunamadı.
           </CommandEmpty>
           {loading ? (
             <div className="space-y-1 overflow-hidden px-1 py-2">
