@@ -3,7 +3,6 @@
 import { useSearchParams } from "next/navigation";
 import { signIn } from "next-auth/react";
 import { GrGoogle } from "react-icons/gr";
-import { FaGithub } from "react-icons/fa";
 
 import { Button } from "../ui/button";
 import { DEFAULT_LOGIN_REDIRECT } from "@/routes";
